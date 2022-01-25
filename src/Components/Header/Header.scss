@@ -1,0 +1,17 @@
+.header{
+    height: 75px;
+    background-color: hsl(0%,0%,100%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1,p{
+        margin:0;
+        font-size:15px;
+        font-weight: 800;
+    }
+    p{
+        font-weight: 600;
+    }
+}
