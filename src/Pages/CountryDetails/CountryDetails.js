@@ -78,6 +78,8 @@ export default function CountryDetails() {
                 <span className="info">Capital: </span>
                 {countryData.capital}
               </li>
+            </ul>
+            <ul>
               <li>
                 <span className="info">Top Level Domain: </span>
                 {countryData.topLevelDomain}

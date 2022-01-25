@@ -1,0 +1,57 @@
+$dark-background: hsl(207, 26%, 17%);
+$dark-elements: hsl(209, 23%, 22%);
+$white: hsl(0%,0%, 100%);
+.App {
+  background-color: hsl(0, 0%, 98%);
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.2s ease-out;
+}
+.dark-mode{
+  background-color: $dark-background;
+  .header{
+    background-color: $dark-elements !important;
+    color:$white;
+  }
+  .all-countries-page{
+    .searchs{
+      .name-form{
+        button,input{
+          background-color: $dark-elements !important;
+        }
+      }
+      .region-form{
+        background-color: $dark-elements !important;
+        select{
+          color: $white !important;
+        }
+      }
+    }
+
+    .countries{
+      .country-preview{
+        background-color: $dark-elements !important;
+        color: $white !important;
+      }
+    }
+  }
+
+  .country-details-page{
+    .back{
+      background-color: $dark-elements !important;
+      color: $white !important;
+    }
+    .country{
+      background-color: inherit !important;
+      color: $white !important;
+      .border-countries{
+        .border-nav{
+          button{
+            background-color: $dark-elements !important;
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+}
+

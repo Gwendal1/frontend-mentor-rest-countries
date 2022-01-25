@@ -1,11 +1,11 @@
-import React from 'react';
+import React , {useContext} from 'react';
 import "./Header.scss"
 
-export default function Header() {
+export default function Header({props}) {
   return (
   <div className="header">
       <h1>Where in the world ?</h1>
-      <p>Dark Mode</p>
+      <button onClick={props}>Dark Mode</button>
   </div>
   );
 }

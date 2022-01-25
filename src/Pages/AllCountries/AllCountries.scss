@@ -15,12 +15,12 @@
         border: none;
         padding: 0;
         background-color: hsl(0%, 0%, 100%);
+        transition: all 0.2s ease-out;
       }
       button {
         width: 30%;
         img {
           width: 20px;
-          fill: lightgray;
         }
       }
       input {
@@ -32,10 +32,12 @@
     .region-form{
       background-color: hsl(0%, 0%, 100%);
       line-height: 70px;
+      transition: all 0.2s ease-out;
       select{
         font-family: "Nunito", sans-serif;
         border:none;
         width: 100%;
+        background-color: inherit;
       }
     }
   }
@@ -47,6 +49,7 @@
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       text-align: left;
       background-color: hsl(0%, 0%, 100%);
+      transition: all 0.2s ease-out;
       overflow: hidden;
       border-radius: 10px;
       height: 370px;
@@ -75,6 +78,37 @@
             font-weight: 600;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .all-countries-page{
+    margin: 25px 50px;
+    .searchs{
+      margin: 0 !important;
+      display: flex;
+      justify-content: space-between;
+      .name-form{
+        width: 35%;
+        button{
+          img{
+            width: 30px;
+          }
+        }
+      }
+      .region-form{
+        width: 20%;
+      }
+    }
+    .countries{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 50px;
+      margin: 0 !important;
+      .country-preview{
+        margin: 0 !important;
       }
     }
   }
