@@ -96,23 +96,27 @@ export default function CountryDetails() {
               </li>
             </ul>
           </div>
-
-          <div className="border-countries">
-            <h3>Border Countries:</h3>
-            <div className="border-nav">
-              {borderCountries.map((count) => {
-                return (
-                  <Link
-                    to={{
-                      pathname: `/${count.code}`,
-                    }}
-                  >
-                    <button key={count.name}>{count.name}</button>
-                  </Link>
-                );
-              })}
+          {borderCountries.length === 0 ? (
+            ""
+          ) : (
+            <div className="border-countries">
+              <h3>Border Countries:</h3>
+              <div className="border-nav">
+                {borderCountries.map((count) => {
+                  return (
+                    <Link
+                      to={{
+                        pathname: `/${count.code}`,
+                      }}
+                      key={count.name}
+                    >
+                      <button>{count.name}</button>
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

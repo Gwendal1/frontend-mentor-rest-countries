@@ -1,11 +1,14 @@
 .all-countries-page {
   .searchs { 
     margin: 20px;
-    .name-form {
-      display: flex;
+    .name-form, .region-form{
       height: 70px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       border-radius: 10px;
+      margin: 30px 0;
+    }
+    .name-form {
+      display: flex;
       overflow: hidden;
       button,
       input {
@@ -24,6 +27,15 @@
         width: 70%;
         font-family: "Nunito", sans-serif;
         font-size: 15px;
+      }
+    }
+    .region-form{
+      background-color: hsl(0%, 0%, 100%);
+      line-height: 70px;
+      select{
+        font-family: "Nunito", sans-serif;
+        border:none;
+        width: 100%;
       }
     }
   }

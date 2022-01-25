@@ -7,6 +7,7 @@ import "./AllCountries.scss";
 export default function AllCountries() {
   const [countriesDatas, setCountriesData] = useState([]);
   const [searchState, setSearchState] = useState("");
+  const [selectState, setSelectState] = useState("");
 
   const fetchAllCountriesDatas = async () => {
     const result = await api.get(`https://restcountries.com/v2/all`);
@@ -28,22 +29,36 @@ export default function AllCountries() {
     }
   };
 
+  const fetchCountriesByRegionDatas = async () => {
+      const result = await api.get(`https://restcountries.com/v2/region/${selectState}`);
+      setCountriesData(result.data)
+  }
+
   useEffect(() => {
     fetchAllCountriesDatas();
   }, []);
 
   useEffect(() => {
-    if (searchState.length === 0) {
-      fetchAllCountriesDatas();
-    } else {
+    if (searchState.length !== 0) {
       fetchSearchedCountriesDatas();
+    } else if (selectState.length !== 0){
+        fetchCountriesByRegionDatas();
+    } else {
+        fetchAllCountriesDatas();
     }
-  }, [searchState]);
+  }, [searchState,selectState]);
 
   const handleSearch = (e) => {
     e.preventDefault();
     setSearchState(inpRef.current.value);
+    setSelectState("")
   };
+
+  const handleSelect = (e) => {
+      e.preventDefault();
+      setSelectState(e.target.value)
+      setSearchState("")
+  }
 
   const inpRef = useRef();
 
@@ -60,6 +75,17 @@ export default function AllCountries() {
             ref={inpRef}
             placeholder="Search for a country..."
           ></input>
+        </form>
+
+        <form onChange={handleSelect} className="region-form">
+            <select name="region" id="select">
+                <option value="">Filter by Region</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
         </form>
       </div>
       <div className="countries">
