@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Search from "../../images/search.svg";
 import api from "../../api";
 import "./AllCountries.scss";
@@ -9,7 +10,7 @@ export default function AllCountries() {
 
   const fetchAllCountriesDatas = async () => {
     const result = await api.get(`https://restcountries.com/v2/all`);
-    if (result.status !== undefined) {
+    if (result.data.length !== undefined) {
       setCountriesData(result.data);
     } else {
       setCountriesData([]);
@@ -65,6 +66,9 @@ export default function AllCountries() {
         {countriesDatas.map((item, index) => {
           return (
             <div className="country-preview" key={index}>
+                <Link to={{
+                    pathname: `/${item.alpha3Code}`
+                }}/>
               <img src={item.flags.png} alt="" />
               <div className="country-infos">
                 <h2 className="name">{item.name}</h2>
