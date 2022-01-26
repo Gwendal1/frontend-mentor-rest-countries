@@ -14,12 +14,9 @@ export default function CountryDetails() {
   const fetchBorder = async (datas) => {
     const newArr = [];
     for (const data of datas) {
-      //   console.log(data);
       const count = await api.get(`https://restcountries.com/v2/alpha/${data}`);
-      //   console.log(count);
       newArr.push({ name: count.data.name, code: data });
     }
-    //   console.log(newArr);
     setBorderCountries(newArr);
   };
 
