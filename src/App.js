@@ -13,7 +13,7 @@ function App() {
 }
 
   return (
-    <Router forceRefresh={true}>
+    <Router forceRefresh={true} basename={process.env.PUBLIC_URL}>
       <div className={theme === true ? "App dark-mode" : "App"}>
         <Header props={toggleTheme}/>
         <Switch>
