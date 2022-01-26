@@ -48,6 +48,8 @@ export default function AllCountries() {
     }
   }, [searchState,selectState]);
 
+  
+
   const handleSearch = (e) => {
     e.preventDefault();
     setSearchState(inpRef.current.value);

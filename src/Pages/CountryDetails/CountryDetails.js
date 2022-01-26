@@ -39,6 +39,10 @@ export default function CountryDetails() {
     fetchCountryData();
   }, []);
 
+  const populationFormat = (pop) => {
+    return pop.toLocaleString();
+  }
+
   return (
     <div className="country-details-page">
       <button className="back">
@@ -64,7 +68,7 @@ export default function CountryDetails() {
               </li>
               <li>
                 <span className="info">Population: </span>
-                {countryData.population}
+                {populationFormat(countryData.population)}
               </li>
               <li>
                 <span className="info">Region: </span>
